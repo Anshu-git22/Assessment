@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Submissions</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+</head>
+
+<body class="p-3">
+
+    <div class="container">
+        <h2 class="text-center mb-4">Customer Submissions</h2>
+
+        <div id="messageBox"></div>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr class="text-center">
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Aadhar</th>
+                    <th>Check In</th>
+                    <th>Check Out</th>
+                    <th>Adults</th>
+                    <th>Address</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody id="dataBody">
+                <!-- JS will load data here -->
+            </tbody>
+        </table>
+
+        <div class="text-center mt-3">
+            <a href="index.html" class="btn btn-primary">Back to Form</a>
+        </div>
+    </div>
+
+    <script>
+        function loadData() {
+            let customers = JSON.parse(localStorage.getItem("customers")) || [];
+
+            let tableBody = document.getElementById("dataBody");
+            tableBody.innerHTML = "";
+
+            if (customers.length === 0) {
+                document.getElementById("messageBox").innerHTML =
+                    `<div class="alert alert-warning text-center">No submissions found.</div>`;
+                return;
+            }
+
+            customers.forEach((c) => {
+                let row = `
+                <tr>
+                    <td>${c.name}</td>
+                    <td>${c.phone}</td>
+                    <td>${c.email}</td>
+                    <td>${c.aadhar}</td>
+                    <td>${c.checkIn}</td>
+                    <td>${c.checkOut}</td>
+                    <td>${c.adults}</td>
+                    <td>${c.address}</td>
+                    <td>${c.purpose}</td>
+                </tr>
+                `;
+
+                tableBody.innerHTML += row;
+            });
+        }
+
+        loadData();
+    </script>
+
+</body>
+
+</html>
