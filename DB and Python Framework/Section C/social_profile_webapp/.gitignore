@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+myvenv/
+venv/
+env/
+
+# Django
+*.log
+*.pot
+*.pyc
+db.sqlite3
+media/
+
+# Static files (optional ignore)
+staticfiles/
+
+# Environment variables (IMPORTANT)
+.env
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Migrations (optional)
+**/migrations/*
+!**/migrations/__init__.py
+
+# SQLite database
+*.sqlite3
+
+# CSV exports (optional)
+*.csv

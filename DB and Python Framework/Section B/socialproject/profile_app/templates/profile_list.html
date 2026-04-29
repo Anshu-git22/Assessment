@@ -1,0 +1,17 @@
+<h2>Profiles</h2>
+
+<a href="/create/">Add Profile</a>
+
+<ul>
+{% for profile in profiles %}
+    <li>
+        {{ profile.username }} - {{ profile.age }}
+
+        {% if profile.is_public %}
+            Public
+        {% else %}
+            Private
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>
