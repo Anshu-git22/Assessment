@@ -1,0 +1,15 @@
+{
+  "products": [
+    {
+      "id": "EgPZMpdUaXk",
+      "productName": "BMW M3 E30",
+      "price": "7000000",
+      "offerPrice": "6888888",
+      "photo": "blob:http://localhost:5174/358137c8-15e9-4115-ade9-022e81c31e48",
+      "qty": "1",
+      "description": "This is bmw m3 e 30 red color",
+      "addedDate": "2026-04-30"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
